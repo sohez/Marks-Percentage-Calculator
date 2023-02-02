@@ -13,8 +13,8 @@ body {
   font-family: monospace;
 }
 .container {
-width: max-content;
-  margin: 8px;
+max-width: max-content;  
+margin: auto;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 table {
@@ -100,5 +100,8 @@ border: 0.5px solid #8c8787;
   .ml{
     width: 20%;
   }
+  .container {
+    max-width: 80%;  margin: auto;
+    }
 
 }
