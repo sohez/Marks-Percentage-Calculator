@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marks Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Subject Name</th>
+            <th>Scored Marks</th>
+            <th>Total Marks</th>
+            <th><button class="add" onclick="add()">Add Subject +</button></th>
+          </tr>
+        </thead>
+        <tbody id="bd">
+          <!-- js logic -->
+        </tbody>
+        <tr>
+          <td><span id="per">Percentage: 00%</span></td>
+          <td><span id="sco">Scored Marks: 00</span></td>
+          <td><span id="tot">Total Marks: 00</span></td>
+          <td><button class="sum" onclick="sum()">Calculate</button></td>
+        </tr>
+      </table>
+      <div class="box">
+        <div class="row"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let Scored = document.getElementsByClassName("Scored");
+    let Total = document.getElementsByClassName("total");
+
+    let total_marks = 0;
+    let scored_marks = 0;
+
+    add();
+    function add() {
+      let bd = document.getElementById("bd");
+      let close = document.getElementsByClassName("close");
+      let data = `<tr>
+            <td><input type="text" class="subject" aria-label="Subject" placeholder="Subject"/></td>
+            <td><input type="number" class="Scored" aria-label="Scored Marks" placeholder="Scored Marks"/></td>
+            <td><input type="number" class="total" aria-label="total Marks" placeholder="total Marks"/></td>
+            <td><button class="close">Delete</button></td>
+          </tr>`;
+      bd.insertAdjacentHTML("beforeend", data);
+      console.log(close);
+      for (let i = 0; i < close.length; i++) {
+        close[0].style.display = "none";
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div = div.parentElement;
+          div.style.display = "none";
+        };
+      }
+    }
+    function sum() {
+      total_marks = 0;
+      scored_marks = 0;
+
+      for (let i = 0; i < Scored.length; i++) {
+        scored_marks = parseFloat(scored_marks) + parseFloat(Scored[i].value);
+      }
+      // console.log("Scored"+scored_marks);
+      document.getElementById("sco").innerHTML =
+        "Scored Marks: " + scored_marks;
+
+      for (let i = 0; i < Total.length; i++) {
+        total_marks = parseFloat(total_marks) + parseFloat(Total[i].value);
+      }
+      // console.log("Total"+total_marks);
+      document.getElementById("tot").innerHTML = "Total Marks: " + total_marks;
+
+      document.getElementById("per").innerHTML =
+        "Total Marks: " + (scored_marks / total_marks) * 100 + "%";
+    }
+  </script>
+</html>
