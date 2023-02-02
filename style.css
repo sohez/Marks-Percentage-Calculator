@@ -1,72 +1,93 @@
+:root {
+  --green: rgb(41, 176, 41);
+  --red: rgb(200, 40, 40);
+  --blue: rgb(44, 87, 205);
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  text-transform: uppercase;
+  font-family: monospace;
+}
+.container {
+width: max-content;
+  margin: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+table {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 18px 24px;
+  border: 1px solid #807e7e;
+  border-collapse: collapse;
+}
+tr,
+td,
+th {
+  border: 1px solid #636161;
+  padding: 8px 18px;
+}
+th {
+  font-size: 1.2rem;
+  color: #252525;
+  background-color: #ededed;
+}
 
-:root{
-    --green: rgb(41, 176, 41);
-    --red: rgb(200, 40, 40);
-    --blue: rgb(44, 87, 205);
+.close,
+.sum,
+.add {
+  padding: 8px 12px;
+  background-color: var(--red);
+  color: white;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 4px;
 }
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+.add {
+  background-color: var(--green);
 }
-body{
-    text-transform: uppercase;
-    font-family:monospace;
+.sum {
+  background-color: var(--blue);
 }
-.container{
-padding: 8px;
+.close:hover,
+.sum:hover,
+.add:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
-table{
-    justify-content: center; align-items: center; text-align: center;
-    padding: 18px 24px;
-    border: 1px solid #807e7e;
-    border-collapse: collapse;
+input {
+  border: 1px solid #252525;
+  outline: none;
+  padding: 5px;
+  width: 100%;
+  margin: auto;
+  border-radius: 3px;
 }
-tr,td,th{
-    border: 1px solid #636161;
-    padding: 8px 18px;
-}
-th{
-    font-size: 1.2rem;
-    color: #252525;
-    background-color: #ededed;
-}
-
-.close,.sum,.add{
-    padding: 8px 12px;
-    background-color: var(--red);
-    color: white;
-    text-align: center;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-}
-.add{
-background-color: var(--green);
-}
-.sum{
-    background-color: var(--blue);
-    }
-.close:hover,.sum:hover,.add:hover{
-    opacity: 0.7;
-    cursor: pointer;
-}
-input{
-    border: 1px solid #252525;
-    outline: none;
-    padding: 5px;
-    width: 100%;
-    margin: auto;
-    border-radius: 3px;
+.bottom-main {
+  background-color: rgb(202, 244, 201);
+  font-weight: 600;
 }
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    *{
-        font-size: 1rem;
-    }
-    tr,td,th{
-        border: 0.5px solid #8c8787;
-        padding: 12px 3px;
-    }
-
+  /* For mobile phones: */
+  * {
+    font-size: 0.8rem;
   }
+  tr,
+  td,
+  th {
+    border: 0.5px solid #8c8787;
+    padding: 12px 3px;
+  }
+  th {
+    font-size: 0.9rem;
+  }
+  .close,
+  .sum,
+  .add {
+    font-size: 0.7rem;
+  }
+}
