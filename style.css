@@ -15,7 +15,8 @@ body {
 .container {
 width: max-content;
   margin: 8px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 table {
   justify-content: center;
   align-items: center;
@@ -29,6 +30,7 @@ td,
 th {
   border: 1px solid #636161;
   padding: 8px 18px;
+  
 }
 th {
   font-size: 1.2rem;
@@ -90,4 +92,13 @@ border: 0.5px solid #8c8787;
   .add {
     font-size: 0.8rem;
   }
+  table {
+
+    padding: 10px 2px;
+
+  }
+  .ml{
+    width: 20%;
+  }
+
 }
