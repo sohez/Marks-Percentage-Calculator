@@ -60,9 +60,9 @@ th {
   cursor: pointer;
 }
 input {
-  border: 1px solid #252525;
+border: 0.5px solid #8c8787;
   outline: none;
-  padding: 5px;
+  padding: 10px 2px;
   width: 100%;
   margin: auto;
   border-radius: 3px;
@@ -74,7 +74,7 @@ input {
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   * {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   tr,
   td,
@@ -88,6 +88,6 @@ input {
   .close,
   .sum,
   .add {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
