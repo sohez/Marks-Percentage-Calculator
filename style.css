@@ -11,12 +11,14 @@
 body{
     text-transform: uppercase;
 }
+.container{
+padding: 8px;
+}
 table{
     justify-content: center; align-items: center; text-align: center;
     padding: 18px 24px;
     border: 1px solid #807e7e;
     border-collapse: collapse;
-
 }
 tr,td,th{
     border: 1px solid #636161;
@@ -24,6 +26,8 @@ tr,td,th{
 }
 th{
     font-size: 1.2rem;
+    color: #252525;
+    background-color: #ededed;
 }
 
 .close,.sum,.add{
@@ -54,3 +58,16 @@ input{
     border-radius: 3px;
     background-color: rgb(235, 235, 235);
 }
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    *{
+        font-size: 1.2rem;
+    }
+    tr,td,th{
+        border: 1px solid #8c8787;
+        padding: 12px 3px;
+    }
+    .close,.sum,.add{
+        padding: 10px 18px;
+    }
+  }
