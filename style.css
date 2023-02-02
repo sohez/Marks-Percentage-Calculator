@@ -1,3 +1,4 @@
+
 :root{
     --green: rgb(41, 176, 41);
     --red: rgb(200, 40, 40);
@@ -10,6 +11,7 @@
 }
 body{
     text-transform: uppercase;
+    font-family:monospace;
 }
 .container{
 padding: 8px;
@@ -56,18 +58,15 @@ input{
     width: 100%;
     margin: auto;
     border-radius: 3px;
-    background-color: rgb(235, 235, 235);
 }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     *{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     tr,td,th{
-        border: 1px solid #8c8787;
+        border: 0.5px solid #8c8787;
         padding: 12px 3px;
     }
-    .close,.sum,.add{
-        padding: 10px 18px;
-    }
+
   }
