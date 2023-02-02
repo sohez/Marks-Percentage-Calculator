@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marks Calculator</title>
+    <title>Marks Percentage Calculator</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="container">
+      <h1>Marks Percentage Calculator</h1>
       <table>
         <thead>
           <tr>
@@ -70,16 +71,16 @@
       }
       // console.log("Scored"+scored_marks);
       document.getElementById("sco").innerHTML =
-        "Scored Marks: " + scored_marks;
+        "Scored Marks: <br>" + parseFloat(scored_marks).toFixed(2);
 
       for (let i = 0; i < Total.length; i++) {
         total_marks = parseFloat(total_marks) + parseFloat(Total[i].value);
       }
       // console.log("Total"+total_marks);
-      document.getElementById("tot").innerHTML = "Total Marks: " + total_marks;
+      document.getElementById("tot").innerHTML = "Total Marks: <br>" + parseFloat(total_marks).toFixed(2);
 
       document.getElementById("per").innerHTML =
-        "Total Marks: " + (scored_marks / total_marks) * 100 + "%";
+        "Total Marks: <br>" + parseFloat((scored_marks / total_marks) * 100).toFixed(2)  + "%";
     }
   </script>
 </html>
