@@ -16,6 +16,7 @@ body {
 max-width: max-content;  
 margin: auto;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-top: 70px;
 }
 table {
   justify-content: center;
@@ -73,6 +74,11 @@ border: 0.5px solid #8c8787;
   background-color: rgb(202, 244, 201);
   font-weight: 600;
 }
+h1{
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   * {
@@ -101,7 +107,11 @@ border: 0.5px solid #8c8787;
     width: 20%;
   }
   .container {
-    max-width: 80%;  margin: auto;
+    max-width: 95%;  margin: auto;
+    margin-top: 50px;
     }
-
+    h1{
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
 }
