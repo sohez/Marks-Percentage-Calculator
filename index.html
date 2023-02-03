@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marks Percentage Calculator</title>
+    <meta name="title" content="Marks Percentage Calculator" />
+    <meta name="discription"
+      content=" This Tool use to Marks Percentage Calculator"/>
+    <meta name="keywords" content="Marks, Percentage, Calculator, sohez" />
+    <meta property="og:type" content="website" />
+    <meta
+      name="og_site_name"
+      property="og:site_name"
+      content="https://sohez.github.io/Marks-Percentage-Calculator/"
+    />
+    <link rel="icon" type="image/x-icon" href="./icon.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Marks Percentage Calculator</h1>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="4"><input type="text" class="name" aria-label="Name" placeholder="Student Name"></th>
+          </tr>
+          <tr>
+            <th>Subject Name</th>
+            <th>Scored Marks</th>
+            <th>Total Marks</th>
+            <th><button class="add" onclick="add()">Add Subject +</button></th>
+          </tr>
+        </thead>
+        <tbody id="bd">
+          <!-- js logic -->
+        </tbody>
+        <tr class="bottom-main">
+          <td><span id="per">Percentage: 00%</span></td>
+          <td class="ml"><span id="sco">Scored Marks: 00</span></td>
+          <td class="ml"><span id="tot">Total Marks: 00</span></td>
+          <td><button class="sum" onclick="sum()">Calculate</button></td>
+        </tr>
+      </table>
+      <button onclick="print_marks()" id="print">Download PDF</button>
+      <div id="box">
+        <table>
+          <thead>
+            <tr>
+              <th colspan="3" id="name-dis"></th>
+            </tr>
+            <tr>
+              <th>Subject Name</th>
+              <th>Scored Marks</th>
+              <th>Total Marks</th>
+            </tr>
+          </thead>
+          <tbody id="rows-data">
+            <!-- Logic data-->
+          </tbody>
+          <tr class="bottom-main">
+            <td><span id="per-dis">Percentage: 00%</span></td>
+            <td class="ml"><span id="sco-dis">Scored Marks: 00</span></td>
+            <td class="ml"><span id="tot-dis">Total Marks: 00</span></td>
+          </tr>
+        </table>
+      </div>
+      <a href="https://sohez.github.io/" target="_blank" >SAYYED SOHEL ©</a>
+    </div>
+  </body>
+  <script src="./logic.js"></script>
+</html>

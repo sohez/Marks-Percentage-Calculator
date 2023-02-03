@@ -1,0 +1,138 @@
+:root {
+  --green: rgb(41, 176, 41);
+  --red: rgb(200, 40, 40);
+  --blue: rgb(44, 87, 205);
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  text-transform: uppercase;
+  font-family: monospace;
+}
+.container {
+  max-width: max-content;
+  margin: auto;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-top: 70px;
+}
+table {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 18px 24px;
+  border: 1px solid #807e7e;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+tr,
+td,
+th {
+  border: 1px solid #636161;
+  padding: 8px 18px;
+}
+th {
+  font-size: 1.2rem;
+  color: #252525;
+  background-color: #f2f1f1;
+}
+
+.close,
+#print,
+.sum,
+.add {
+  padding: 8px 12px;
+  background-color: var(--red);
+  color: white;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+.add {
+  background-color: var(--green);
+}
+.sum {
+  background-color: var(--blue);
+}
+.close:hover,
+#print:hover,
+.sum:hover,
+.add:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+input {
+  border: 0.5px solid #8c8787;
+  outline: none;
+  padding: 10px 2px;
+  width: 100%;
+  margin: auto;
+  border-radius: 3px;
+}
+.bottom-main {
+  background-color: rgb(221, 244, 220);
+  font-weight: 600;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+#box {
+  margin-top: 20px;
+  display: none;
+  width: 100%;
+}
+#print {
+  display: none;
+}
+a{
+  text-align: center;
+  text-decoration: none;
+  color: rgb(36, 96, 201);
+  font-weight: 600;
+  font-size: 1rem;
+}
+a:hover{
+  text-decoration: underline;
+  opacity: 0.9;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  * {
+    font-size: 0.9rem;
+  }
+  tr,
+  td,
+  th {
+    border: 0.5px solid #8c8787;
+    padding: 12px 3px;
+  }
+  th {
+    font-size: 0.9rem;
+  }
+  .close,
+  .sum,
+  .add {
+    font-size: 0.8rem;
+  }
+  table {
+    padding: 10px 2px;
+    width: 100%;
+  }
+  .ml {
+    width: 20%;
+  }
+  .container {
+    max-width: 95%;
+    margin: auto;
+    margin-top: 50px;
+  }
+  h1 {
+    margin-bottom: 8px;
+    font-size: 1rem;
+  }
+}
