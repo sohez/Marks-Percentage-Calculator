@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marks Percentage Calculator</title>
     <meta name="title" content="Marks Percentage Calculator" />
-    <meta name="discription"
-      content=" This Tool use to Marks Percentage Calculator"/>
+    <meta
+      name="discription"
+      content=" This Tool use to Marks Percentage Calculator"
+    />
     <meta name="keywords" content="Marks, Percentage, Calculator, sohez" />
     <meta property="og:type" content="website" />
     <meta
@@ -17,12 +19,9 @@
     />
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sohez/Marks-Percentage-Calculator/main/icon.png" />
     <link rel="stylesheet" href="./style.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+
+    <script src="./jspdf.umd.min.js"></script>
+    <script src="./html2canvas.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -30,7 +29,14 @@
       <table>
         <thead>
           <tr>
-            <th colspan="4"><input type="text" class="name" aria-label="Name" placeholder="Student Name"></th>
+            <th colspan="4">
+              <input
+                type="text"
+                class="name"
+                aria-label="Name"
+                placeholder="Student Name"
+              />
+            </th>
           </tr>
           <tr>
             <th>Subject Name</th>
@@ -72,7 +78,7 @@
           </tr>
         </table>
       </div>
-      <a href="https://sohez.github.io/" target="_blank" >SAYYED SOHEL ©</a>
+      <a href="https://sohez.github.io/" target="_blank">SAYYED SOHEL ©</a>
     </div>
   </body>
   <script src="./logic.js"></script>
