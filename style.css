@@ -26,6 +26,8 @@ table {
   border: 1px solid #807e7e;
   border-collapse: collapse;
   margin-bottom: 15px;
+  width: 100%;
+
 }
 tr,
 td,
