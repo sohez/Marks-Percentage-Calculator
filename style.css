@@ -9,14 +9,14 @@
   box-sizing: border-box;
 }
 body {
-  text-transform: uppercase;
-  font-family: monospace;
-}
-.container {
-  max-width: max-content;
-  margin: auto;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* text-transform: uppercase; */
+  font-family: Arial, Helvetica, sans-serif;
   margin-top: 70px;
+  font-size: 16px;
+  padding: 8px;
+}
+.tool-container {
+  margin-top: 12px;
 }
 table {
   justify-content: center;
@@ -27,7 +27,6 @@ table {
   border-collapse: collapse;
   margin-bottom: 15px;
   width: 100%;
-
 }
 tr,
 td,
@@ -41,10 +40,7 @@ th {
   background-color: #f2f1f1;
 }
 
-.close,
-#print,
-.sum,
-.add {
+.btn {
   padding: 8px 12px;
   background-color: var(--red);
   color: white;
@@ -53,19 +49,29 @@ th {
   outline: none;
   border-radius: 4px;
 }
-.add {
-  background-color: var(--green);
-}
-.sum {
-  background-color: var(--blue);
-}
-.close:hover,
-#print:hover,
-.sum:hover,
-.add:hover {
+.btn:hover {
   opacity: 0.7;
   cursor: pointer;
 }
+.btn-add-subject {
+  background-color: var(--green);
+}
+.btn-calculate {
+  background-color: var(--blue);
+}
+.btn-print {
+  background-color: var(--red);
+  margin: 5px;
+}
+
+#btn-print-pdf {
+  display: none;
+}
+.table-bottom-end-row {
+  background-color: rgb(221, 244, 220);
+  font-weight: 600;
+}
+
 input {
   border: 0.5px solid #8c8787;
   outline: none;
@@ -74,31 +80,34 @@ input {
   margin: auto;
   border-radius: 3px;
 }
-.bottom-main {
-  background-color: rgb(221, 244, 220);
-  font-weight: 600;
+
+.direct-calculator {
+  margin-top: 12px;
 }
-h1 {
-  text-align: center;
-  margin-bottom: 12px;
-  font-size: 1.2rem;
-}
-#box {
+
+/* div of print table result */
+#display-result {
   margin-top: 20px;
   display: none;
   width: 100%;
 }
-#print {
-  display: none;
+
+li {
+  margin-top: 12px;
 }
-a{
+h1 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+a {
   text-align: center;
   text-decoration: none;
   color: rgb(36, 96, 201);
   font-weight: 600;
   font-size: 1rem;
 }
-a:hover{
+a:hover {
   text-decoration: underline;
   opacity: 0.9;
 }
@@ -116,9 +125,7 @@ a:hover{
   th {
     font-size: 0.9rem;
   }
-  .close,
-  .sum,
-  .add {
+  .btn {
     font-size: 0.8rem;
   }
   table {
@@ -132,9 +139,5 @@ a:hover{
     max-width: 95%;
     margin: auto;
     margin-top: 50px;
-  }
-  h1 {
-    margin-bottom: 8px;
-    font-size: 1rem;
   }
 }

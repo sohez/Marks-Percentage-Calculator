@@ -1,104 +1,128 @@
+    // console.log("Create BY SOHEL SAYYED");
+    addSubject();
 
-    console.log("Create BY SOHEL SAYYED");
-    add();
-    function add() {
-        let bd = document.getElementById("bd");
-        let close = document.getElementsByClassName("close");
-        let data = `<tr>
+    // this method add the Row for input subject details
+    function addSubject() {
+        let tableBody = document.getElementById("table-body");
+        let deleteButton = document.getElementsByClassName("delete-button"); //this is get the all delete input row buttons from the table
+        let rowInputSubjectDetails = `
+        <tr>
         <td ><input type="text" class="subject" aria-label="Subject" placeholder="Subject"/></td>
-        <td class="ml"><input type="number" class="Scored" aria-label="Scored Marks" placeholder="Scored Marks"/></td>
-        <td class="ml"><input type="number" class="total" aria-label="total Marks" placeholder="Total Marks"/></td>
-        <td><button class="close">Delete</button></td>
+        <td class=""><input type="number" class="Scored" aria-label="Scored Marks" placeholder="Scored Marks"/></td>
+        <td class=""><input type="number" class="total" aria-label="total Marks" placeholder="Total Marks"/></td>
+        <td><button class="btn delete-button">Delete</button></td>
       </tr>`;
-        bd.insertAdjacentHTML("beforeend", data);
-        for (let i = 0; i < close.length; i++) {
-            close[0].style.display = "none";
-            close[i].onclick = function () {
-                var div = this.parentElement;
+      tableBody.insertAdjacentHTML("beforeend", rowInputSubjectDetails);
+        for (let i = 0; i < deleteButton.length; i++) {
+            deleteButton[0].style.display = "none";
+            deleteButton[i].onclick = function () {
+                let div = this.parentElement;
                 div = div.parentElement;
                 div.remove(); //remove the selected element from DOM
             };
         }
     }
 
-    function sum() {
-        let Scored = document.getElementsByClassName("Scored");
-        let Total = document.getElementsByClassName("total");
-        let total_marks = 0;
-        let scored_marks = 0;
-
-        for (let i = 0; i < Scored.length; i++) {
-            scored_marks = parseFloat(scored_marks) + parseFloat(Scored[i].value);
+    //calculate the all marks 
+    function calculateAllMarks() {
+        const scoredElements = document.getElementsByClassName("Scored");
+        const totalElements = document.getElementsByClassName("total");
+    
+        let totalMarks = 0;
+        let scoredMarks = 0;
+    
+        for (let i = 0; i < scoredElements.length; i++) {
+            scoredMarks += parseFloat(scoredElements[i].value) || 0;
         }
-        document.getElementById("sco").innerHTML =
-            "Scored Marks: <br>" + parseFloat(scored_marks).toFixed(2);
-
-        for (let i = 0; i < Total.length; i++) {
-            total_marks = parseFloat(total_marks) + parseFloat(Total[i].value);
+    
+        for (let i = 0; i < totalElements.length; i++) {
+            totalMarks += parseFloat(totalElements[i].value) || 0;
         }
-        document.getElementById("tot").innerHTML =
-            "Total Marks: <br>" + parseFloat(total_marks).toFixed(2);
-
-        document.getElementById("per").innerHTML =
-            "Percentage: <br>" +
-            parseFloat((scored_marks / total_marks) * 100).toFixed(2) +
-            "%";
-
-        document.getElementById("box").style.display = "block";
-        document.getElementById("print").style.display = "block";
-        create_table(
-            parseFloat(total_marks).toFixed(2),
-            parseFloat(scored_marks).toFixed(2),
-            parseFloat((scored_marks / total_marks) * 100).toFixed(2)
-        );
+    
+        const scoredMarksFixed = scoredMarks.toFixed(2);
+        const totalMarksFixed = totalMarks.toFixed(2);
+        const percentage = ((scoredMarks / totalMarks) * 100).toFixed(2);
+    
+        document.getElementById("text-scored").innerHTML = `Scored Marks: <br>${scoredMarksFixed}`;
+        document.getElementById("text-total").innerHTML = `Total Marks: <br>${totalMarksFixed}`;
+        document.getElementById("txt-percentage").innerHTML = `Percentage: <br>${percentage}%`;
+    
+        document.getElementById("display-result").style.display = "block";
+        document.getElementById("btn-print-pdf").style.display = "block";
+    
+        displayResult(totalMarksFixed, scoredMarksFixed, percentage);
     }
 
-    function create_table(tm, sc, permark) {
-        let table_body = document.getElementById("rows-data");
+    function displayResult(totalMarks, scoredMarks, percentage) {
+        let tableBody = document.getElementById("table-body-display");
         let Scored = document.getElementsByClassName("Scored");
         let Total = document.getElementsByClassName("total");
         let subject = document.getElementsByClassName("subject");
 
-        let row_data = "";
+        let displayRowData = "";
 
         for (let i = 0; i < Scored.length; i++) {
-            row_data += `<tr>
+        displayRowData += `
+        <tr>
           <td>${subject[i].value}</td>
           <td>${Scored[i].value}</td>
           <td>${Total[i].value}</td>
-              </tr>`;
+        </tr>`;
         }
-        table_body.innerHTML = row_data;
-        document.getElementById("per-dis").innerHTML =
-            "Percentage: <br>" + permark + "%";
-        document.getElementById("sco-dis").innerHTML = "Scored Marks: <br>" + sc;
-        document.getElementById("tot-dis").innerHTML = "Total Marks: <br>" + tm;
-        document.getElementById("name-dis").innerHTML = document.getElementsByClassName("name")[0].value;
+        tableBody.innerHTML = displayRowData;
+
+        document.getElementById("text-display-percentage").innerHTML =
+            "Percentage: <br>" + percentage + "%";
+        document.getElementById("text-display-scored").innerHTML = "Scored Marks: <br>" + scoredMarks;
+        document.getElementById("text-display-total").innerHTML = "Total Marks: <br>" + totalMarks;
+        document.getElementById("text-display-student-name").innerHTML = document.getElementsByClassName("name")[0].value;
+
+        document.getElementById("btn-print-pdf").style.display = "block";
     }
-    function print_marks() {
+
+    async function downloadPDF() {
         const { jsPDF } = window.jspdf;
-        const { html2canvas } = window.html2canvas;
 
-        // var element = document.getElementById("box");
-        // var opt = {
-        //     margin: 1,
-        //     filename: "result.pdf",
-        //     image: { type: "jpeg", quality: 1.0 },
-        //     html2canvas: { scale: 2 },
-        //     jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-        // };
-        // html2pdf().set(opt).from(element).save();
+        const content = document.getElementById('display-result');
 
-        var doc = new jsPDF('l', 'mm', [1200, 1210]);
-        var elementHTML = document.querySelector("#box");
+        // Use html2canvas to capture the div content as a canvas
+        const canvas = await html2canvas(content);
+        const imgData = canvas.toDataURL('image/png');
 
-        doc.html(elementHTML, {
-            callback: function (doc) {
-                doc.save('result.pdf');
-            },
-            x: 20,
-            y: 20,
-            // width: 170, //target width in the PDF document
-            // windowWidth: 650 //window width in CSS pixels
-        });
+        // Create jsPDF instance
+        const pdf = new jsPDF('p', 'mm', 'a4');
+
+        // Calculate width and height for the image to fit into a4 paper size
+        const imgWidth = 210; // A4 width in mm
+        const pageHeight = 295; // A4 height in mm
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        let heightLeft = imgHeight;
+        let position = 0;
+
+        // Add image to PDF
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        // While content is larger than one page
+        while (heightLeft >= 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+        }
+
+        // Save the generated PDF
+        pdf.save('content.pdf');
+    }
+
+    function calculateSingleMarks(){
+        let scoredMarks = document.getElementById("single-scored-marks");
+        let outOfMarks = document.getElementById("single-outOf-marks");
+
+        scoredMarks = parseFloat(scoredMarks.value) || 0;
+        outOfMarks = parseFloat(outOfMarks.value) || 0;
+
+        let total = scoredMarks * (100/outOfMarks);
+
+        document.getElementById("calculated-percent").innerText = total.toFixed(2)+"%";
     }
