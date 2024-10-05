@@ -112,7 +112,7 @@
         }
 
         // Save the generated PDF
-        pdf.save('content.pdf');
+        pdf.save('result.pdf');
     }
 
     function calculateSingleMarks(){

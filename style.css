@@ -15,6 +15,10 @@ body {
   font-size: 16px;
   padding: 8px;
 }
+main{
+  padding-left: 15%;
+  padding-right: 15%;
+}
 .tool-container {
   margin-top: 12px;
 }
@@ -116,6 +120,10 @@ a:hover {
   * {
     font-size: 0.9rem;
   }
+  main{
+    padding-left: 5%;
+    padding-right: 5%;
+  }s
   tr,
   td,
   th {
