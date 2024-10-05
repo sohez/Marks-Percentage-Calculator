@@ -18,9 +18,9 @@ body {
   /* line-height */
   line-height: 1.75;
 }
-main{
-  padding-left: 15%;
-  padding-right: 15%;
+header,main{
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .tool-container {
   margin-top: 12px;
@@ -123,7 +123,7 @@ a:hover {
   * {
     font-size: 0.9rem;
   }
-  main{
+  header,main{
     padding-left: 5%;
     padding-right: 5%;
   }s
@@ -151,4 +151,10 @@ a:hover {
     margin: auto;
     margin-top: 50px;
   }
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
